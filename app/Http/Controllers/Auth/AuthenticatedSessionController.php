@@ -32,9 +32,9 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
         if(Auth::user()->privilege === "admin")
-            return redirect()->intended(RouteServiceProvider::ADMIN_DASH);
+            return redirect()->intended(app()->getLocale().RouteServiceProvider::ADMIN_DASH);
         else
-            return redirect()->intended(RouteServiceProvider::HOME);
+            return redirect()->intended(app()->getLocale().RouteServiceProvider::HOME);
     }
 
     /**

@@ -14,15 +14,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect(app()->getLocale());
+});
+Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}'],'middleware' => 'set.language'], function() {
+
+    Route::get('/', function () {
+        return view('welcome');
+    });
+
+    Route::get('/dashboard', function () {
+        return view('UserDashboard');
+    })->middleware(['auth', 'verified','user.access'])->name('dashboard');
+
+    Route::get('/admin/dashboard', function () {
+        return view('AdminDashboard');
+    })->middleware(['auth', 'verified','admin.access'])->name('admin.dashboard');
+
+    require __DIR__.'/auth.php';
+
 });
 
-Route::get('/dashboard', function () {
-    return view('UserDashboard');
-})->middleware(['auth', 'verified','user.access'])->name('dashboard');
-
-Route::get('/admin/dashboard', function () {
-    return view('AdminDashboard');
-})->middleware(['auth', 'verified','admin.access'])->name('admin.dashboard');
-
-require __DIR__.'/auth.php';

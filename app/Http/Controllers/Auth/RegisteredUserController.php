@@ -43,9 +43,9 @@ class RegisteredUserController extends Controller
             Alert::success("Congratulation", "User registered successfully");
         } catch (\Exception $e) {
             Alert::error("Something was wrong", $e->getMessage());
-            return redirect(RouteServiceProvider::REGISTER);
+            return redirect(app()->getLocale()."/".RouteServiceProvider::REGISTER);
         }
-        return redirect(RouteServiceProvider::LOGIN);
+        return redirect(app()->getLocale()."/".RouteServiceProvider::LOGIN);
     }
 
     /**

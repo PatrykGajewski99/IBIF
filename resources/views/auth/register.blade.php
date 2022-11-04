@@ -1,6 +1,6 @@
 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
     <a href="{{ url('/') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-    <a href="{{ route('login') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Login</a>
+    <a href="{{ route('login',app()->getLocale()) }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Login</a>
 </div>
 <x-guest-layout>
     <x-auth-card>
@@ -10,7 +10,7 @@
             </a>
         </x-slot>
 
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ route('register',app()->getLocale()) }}">
             @csrf
 
             <!-- Name -->
@@ -55,7 +55,7 @@
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login',app()->getLocale()) }}">
                     {{ __('Already registered?') }}
                 </a>
 

@@ -1,6 +1,6 @@
 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
     <a href="{{ url('/') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+    <a href="{{ route('register',app()->getLocale()) }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
 </div>
 
 <x-guest-layout>
@@ -14,7 +14,7 @@
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />
 
-        <form method="POST" action="{{ route('login') }}">
+        <form method="POST" action="{{ route('login',app()->getLocale()) }}">
             @csrf
 
             <!-- Email Address -->
@@ -48,7 +48,7 @@
 
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
+                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request',app()->getLocale()) }}">
                         {{ __('Forgot your password?') }}
                     </a>
                 @endif
