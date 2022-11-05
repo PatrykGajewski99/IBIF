@@ -1,4 +1,6 @@
 {
     "User Dashboard" : "Tableau de bord utilisateur",
-    "You are logged in!" : "Vous êtes connecté !"
+    "You are logged in!" : "Vous êtes connecté !",
+    "Dashboard" : "tableau de bord",
+    "Log Out" : "Se déconnecter"
 }

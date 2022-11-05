@@ -65,4 +65,5 @@
             </div>
         </form>
     </x-auth-card>
+    @include('sweetalert::alert')
 </x-guest-layout>

@@ -1,4 +1,6 @@
 {
     "User Dashboard" : "Gebruikersdashboard",
-    "You are logged in!" : "Je bent ingelogd!"
+    "You are logged in!" : "Je bent ingelogd!",
+    "Dashboard" : "Dashboard",
+    "Log Out" : "uitloggen"
 }

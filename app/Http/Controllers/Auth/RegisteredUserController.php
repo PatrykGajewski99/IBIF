@@ -3,15 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
 use App\Providers\RouteServiceProvider;
-use Hamcrest\Core\AllOf;
-use Illuminate\Auth\Events\Registered;
-use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules;
+use App\Services\User\UserService;
 
 class RegisteredUserController extends Controller
 {
@@ -23,29 +17,20 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
+
+    protected UserService $userService;
+
+    public function __construct(UserService $userService)
+    {
+        $this->userService = $userService;
+    }
+
     public function store(Request $request)
     {
-        try {
-
-            $request->validate([
-                'name' => ['required', 'string', 'max:255'],
-                'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-                'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            ]);
-
-            $user = User::create([
-                'name' => $request->name,
-                'email' => $request->email,
-                'password' => Hash::make($request->password),
-            ]);
-
-            event(new Registered($user));
-            Alert::success("Congratulation", "User registered successfully");
-        } catch (\Exception $e) {
-            Alert::error("Something was wrong", $e->getMessage());
+        if($this->userService->store($request)->status() === 201)
+            return redirect(app()->getLocale()."/".RouteServiceProvider::LOGIN);
+        else
             return redirect(app()->getLocale()."/".RouteServiceProvider::REGISTER);
-        }
-        return redirect(app()->getLocale()."/".RouteServiceProvider::LOGIN);
     }
 
     /**
