@@ -2,5 +2,13 @@
     "User Dashboard" : "Gebruikersdashboard",
     "You are logged in!" : "Je bent ingelogd!",
     "Dashboard" : "Dashboard",
-    "Log Out" : "uitloggen"
+    "Log Out" : "uitloggen",
+    "Contact" : "Contact",
+    "Contact Form" : "Contact Formulier",
+    "SEND" : "VRSTUREN",
+    "First name and last name" : "Voornaam en achternaam",
+    "Email" : "E-mail",
+    "Subject" : "Onderwerp",
+    "Message" : "Bericht"
+
 }

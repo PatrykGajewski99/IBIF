@@ -2,5 +2,12 @@
     "User Dashboard" : "Tableau de bord utilisateur",
     "You are logged in!" : "Vous êtes connecté !",
     "Dashboard" : "tableau de bord",
-    "Log Out" : "Se déconnecter"
+    "Log Out" : "Se déconnecter",
+    "Contact" : "Contact",
+    "Contact Form" : "Formulaire de contact",
+    "SEND" : "ENVOYER",
+    "First name and last name" : "Prénom et nom",
+    "Email" : "E-mail",
+    "Subject" : "Matière",
+    "Message" : "Message"
 }

@@ -15,6 +15,9 @@
                     <x-nav-link :href="route('dashboard',app()->getLocale())" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('contact.form',app()->getLocale())" :active="request()->routeIs('contact.form')">
+                        {{ __('Contact') }}
+                    </x-nav-link>
                 </div>
             </div>
 

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,15 @@ Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}'],'mi
     Route::get('/admin/dashboard', function () {
         return view('AdminDashboard');
     })->middleware(['auth', 'verified','admin.access'])->name('admin.dashboard');
+
+    Route::get('/contact', function () {
+        return view('contact');
+    })->middleware(['auth', 'verified','user.access'])->name('contact.form');
+
+    Route::post('/contact/form',[FormController::class,'sendEmail'])
+        ->middleware(['auth', 'verified','user.access'])
+        ->name('send.email');
+
 
     require __DIR__.'/auth.php';
 
