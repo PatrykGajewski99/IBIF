@@ -13,6 +13,7 @@
     "Title" : "Titre",
     "Description" : "La description",
     "ADD" : "AJOUTER",
+    "Recipient e-mail" : "Destinataire E-mail",
     "The :attribute must be a valid role.": "Ce champ doit être un rôle valide.",
     "The :attribute must be at least :length characters and contain at least one number.": "Ce champ doit avoir au moins :length caractères et contenir au moins un chiffre.",
     "The :attribute must be at least :length characters and contain at least one special character and one number.": "Ce champ doit avoir au moins :length caractères et contenir au moins un caractère spécial et un nombre.",

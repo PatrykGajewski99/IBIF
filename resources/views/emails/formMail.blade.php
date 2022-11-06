@@ -5,7 +5,6 @@
 </head>
 <body>
 <p><strong>First name and Last name: </strong>{{ $mailData['name'] }}</p>
-<p><strong>Contact e-mail: </strong>{{ $mailData['email'] }}</p>
 <p><strong>Subject:</strong> {{ $mailData['subject'] }}</p>
 <p><strong>Message:</strong> {{ $mailData['message'] }}</p>
 </body>

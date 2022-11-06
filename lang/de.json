@@ -12,5 +12,6 @@
     "Message" : "Bericht",
     "Title" : "Titel",
     "Description" : "Omschrijving",
-    "ADD" :"TOEVOEGEN"
+    "ADD" :"TOEVOEGEN",
+    "Recipient e-mail" : "Ontvanger e-mail"
 }
