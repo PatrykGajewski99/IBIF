@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\NoteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +39,10 @@ Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}'],'mi
     Route::post('/contact/form',[FormController::class,'sendEmail'])
         ->middleware(['auth', 'verified','user.access'])
         ->name('send.email');
+
+    Route::post('/dashboard/post',[NoteController::class,'store'])
+        ->middleware(['auth', 'verified','user.access'])
+        ->name('post.store');
 
 
     require __DIR__.'/auth.php';

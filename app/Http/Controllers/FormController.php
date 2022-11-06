@@ -7,7 +7,7 @@ use App\Services\Email\FormService;
 
 class FormController extends Controller
 {
-    public FormService $formService;
+    private FormService $formService;
 
     public function __construct(FormService $formService)
     {

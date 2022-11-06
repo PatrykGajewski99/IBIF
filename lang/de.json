@@ -9,6 +9,8 @@
     "First name and last name" : "Voornaam en achternaam",
     "Email" : "E-mail",
     "Subject" : "Onderwerp",
-    "Message" : "Bericht"
-
+    "Message" : "Bericht",
+    "Title" : "Titel",
+    "Description" : "Omschrijving",
+    "ADD" :"TOEVOEGEN"
 }
